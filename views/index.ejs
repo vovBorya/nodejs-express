@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>node</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css" />
+</head> 
+<body>
+
+  <div class="jumbotron">
+    <p><a href="/form">to form</a></p>
+
+    <ul>
+      <% arr.forEach(function(item){ %>
+        <li 
+          class="btn btn-success"
+          onclick="console.log(3)"
+        >
+          <%- item %>
+        </li>
+      <% }); %>
+    </ul>
+
+  </div>
+	
+</body>
+</html>
