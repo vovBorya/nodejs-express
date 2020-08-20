@@ -11,11 +11,12 @@
     <p><a href="/form">to form</a></p>
 
     <ul>
-      <% arr.forEach(function(item){ %>
+      <% posts.forEach(function(post){ %>
         <li 
           class=""
         >
-          <%- item %>
+          <b><%- post.title %></b>
+          <%- post.body %>
         </li>
       <% }); %>
     </ul>

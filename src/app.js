@@ -1,15 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const app = express();
+const Post = require('./models/post');
 
-const arr = ['hi', 'hello', "Morning"];
+const app = express();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-  res.render('index', {arr: arr});
+  Post.find({}).then(posts => {
+    res.render('index', {posts: posts});
+  });
 });
 
 app.get('/form', (req, res) => {
@@ -17,7 +19,14 @@ app.get('/form', (req, res) => {
 });
 
 app.post('/form', (req, res) => {
-  arr.push(req.body.text);
+
+  const {title, body} = req.body;
+  
+  Post.create({
+    title,
+    body
+  }).then((post) => console.log('created post: ', post));
+
   res.redirect('/');
 });
 

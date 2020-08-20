@@ -1,13 +1,13 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "vovBorya",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "cross-env PORT=3001 node index.js",
-    "dev": "nodemon index.js"
+    "start": "cross-env PORT=3001 node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
